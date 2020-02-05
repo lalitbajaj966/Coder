@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            TODOAPP
+        </title>    
+    </head> 
+    
+<body>
+      
+
+        ToDoApp:<br>
+        <input type="text" id="candidate"/>
+    <button onclick="addItem()">Submit</button>
+ 
+   
+    
+    <ul id="dynamic-list">
+        
+        
+        
+    </ul>
+    
+    
+    <script>
+          
+       function addItem(){
+    var ul = document.getElementById("dynamic-list");
+    var candidate = document.getElementById("candidate");
+    var li = document.createElement("li");
+    li.setAttribute('id',candidate.value);
+    li.appendChild(document.createTextNode(candidate.value));
+    ul.appendChild(li);
+           
+ var btn = document.createElement("BUTTON");
+  btn.innerHTML = "CLICK ME";
+ btn.setAttribute("class","btnsize");           
+  btn.setAttribute("onclick","removeItem()");           
+  document.body.appendChild(btn);
+           
+}
+
+function removeItem(){
+    var ul = document.getElementById("dynamic-list");
+    var candidate = document.getElementById("candidate");
+    var item = document.getElementById(candidate.value);
+    ul.removeChild(item);
+    
+ 
+}
+         
+    </script>    
+       
+</body>    
+    
+
+</hmtl>
